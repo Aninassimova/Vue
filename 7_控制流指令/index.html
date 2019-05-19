@@ -6,23 +6,20 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 		<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
 		<title>index</title>
-		<style>
-			.active{
-				background: #a10;
-			}
-		</style>
 	</head>
 	
 	<body>
 		<div id="app">
-			<!--绑定数据和元素属性-->
-			<a v-bind:class="{active:isActive}" v-bind:href="url">	<!--v-bind可用:代替-->	
-			<!--app.url='http://taobao.com'在console上运行-->
-			<!--app.isActive=false在console上运行-->
-				点我
-				<!--<img v-bind:src='img' />-->
-			</a>
-			
+			<div v-if="role == 'admin' || role == 'super_admin'">
+				管理员你好
+			</div>
+			<div v-else-if="role=='hr'">
+				待查看简历：
+				<br />...			
+			</div>
+			<div v-else>
+				您没有权限访问此页面
+			</div>
 		</div>	
 		<script src="../lib/vue.js"></script>
 		<script src="js/main.js"></script>
