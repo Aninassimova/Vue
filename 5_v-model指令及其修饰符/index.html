@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+	    <meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+		<title>index</title>
+	</head>
+	
+	<body>
+		<div id="app">
+			<!--<div>
+				<input type="text" v-model.lazy="name"/><!--lazy惰性，只有点击框外才变化-->
+				<!--{{name}}
+			</div>-->
+			<!--<div>
+				<input type="text" v-model.trim="name"/><!--trim去掉输入的空格-->
+				<!--<pre>{{name}}</pre> 
+			</div>-->
+			<div>
+				<input type="text" v-model.number="price"/><!--number把字符串转换成数字-->
+				<pre>{{price}}</pre> 
+			</div>
+		</div>	
+		<script src="../lib/vue.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>

@@ -1,5 +1,5 @@
 # Vue
-- Vue的命令使用和集成，原教学视频见http://biaoyansu.com。
+- Vue的命令使用和集成，原教学视频见https://biaoyansu.com/
 
 ## 第1-7课
 - v特殊指令
