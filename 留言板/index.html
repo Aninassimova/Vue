@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>留言表</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+    <body>
+        <div id="app" v-cloak style="width: 500px; margin: 0 auto;">
+            <div class="message">
+                <v-input v-model="username"></v-input>
+                <v-textarea v-model="message" ref="message"></v-textarea>
+                <button @click="handleSend">发布</button>
+            </div>
+            <list :list="list" @reply="handleReply"></list>
+        </div>
+        <script src="../lib/vue.js"></script>
+        <script src="js/message_board.js"></script>
+    </body>
+</html>
+
