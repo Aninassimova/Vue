@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+	    <meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+		<title>example</title>
+		<style>
+			.panel{
+				max-width: 300px;
+				border: 1px solid #999;
+				margin-bottom: 15px;
+			}
+			.panel>*{
+	            padding: 15px;
+	        }
+			.panel .title{
+				border-bottom: 1px solid #3399FF;
+			}
+			.panel .footer{
+				border-top: 1px solid #3399FF;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div id="app">
+			<panel>
+				<div slot="title">花花说</div>
+				<div slot="content">YOYO</div>
+				<!--<div slot="footer">更多信息</div>-->
+			</panel>
+			<panel>
+				<div slot="title">小明说</div>
+				<div slot="content">今天贼热</div>
+				<div slot="footer">点击加载</div>
+			</panel>
+			<panel>
+				<div slot="title">小李说</div>
+				<div slot="content">是的</div>
+				<div slot="footer">更多信息</div>
+			</panel>
+		</div>
+		<template id="panel-tpl">
+			<div id="app">
+				<div class="panel">
+					<div class="title">
+						<slot name="title"></slot>
+					</div>
+					<div class="content">
+						<slot name="content"></slot>
+					</div>
+					<div class="footer">
+						<slot name="footer">更多信息</slot>
+					</div>
+				</div>
+			</div>
+		</template>
+		<script src="../lib/vue.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>
