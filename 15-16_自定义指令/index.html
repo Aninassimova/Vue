@@ -17,16 +17,7 @@
 	</head>
 	
 	<body>
-		<div id="app">
-			<!--<div v-pin="card1.pinned" class="card">
-				<button @click="card1.pinned = !card1.pinned">钉住/取消</button>
-				今天天气太热了
-			</div>
-			<div v-pin="card2.pinned" class="card">
-				<a @click="card2.pinned = !card2.pinned" href="#">钉住/取消</a>
-				我是不会出门的
-			</div>-->
-			
+		<div id="app">		
 			<div v-pin:true.bottom.left="card1.pinned" class="card">
 				<button @click="card1.pinned = !card1.pinned">钉住/取消</button>
 				今天天气太热了

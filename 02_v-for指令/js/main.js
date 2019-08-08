@@ -6,16 +6,16 @@ var app=new Vue({
 			{
 				name:'葱',
 				price:5,
-				discount:.8,
+				discount:.8
 			},
 			{
 				name:'姜',
 				price:15,
-				discount:.5,
+				discount:.5
 			},
 			{
 				name:'蒜',
-				price:4.5,
+				price:4.5
 			},
 		]
 	}

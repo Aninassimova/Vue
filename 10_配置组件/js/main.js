@@ -12,7 +12,7 @@ Vue.component('like',{
 		toggle_like:function(){
 			if(!this.liked) //如果还没有点过赞，this.liked=false
 				this.like_count++;
-			else			//如果还没有点过赞，this.liked=true
+			else			//如果点过赞，this.liked=true
 				this.like_count--;
 
 			this.liked=!this.liked;

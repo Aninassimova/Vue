@@ -1,4 +1,4 @@
-var Event=new Vue(); //调度器
+var Event=new Vue(); //关键点：调度器
 
 //平行组件
 Vue.component('huahua',{

@@ -5,16 +5,24 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 		<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
-		<title>index</title>
+		<title>example</title>
 	</head>
 	
 	<body>
 		<div id="app">
-			<alert msg="Wahaha"></alert>
-			<br />
-			<user username="whh"></user> <!--外部往内部传参，即父级组件向子级组件的通信-->
+			<div>
+				<router-link to="/">首页</router-link>
+				<router-link to="/about">关于我们</router-link>
+				<router-link to="/user/花花">花花</router-link>				
+				<router-link to="/user/王尼玛">王尼玛</router-link>		
+				<button @click="surf">漫游</button>
+			</div>
+			<div>
+				<router-view></router-view>
+			</div>
 		</div>
-		<script src="../lib/vue.js"></script>
-		<script src="js/main.js"></script>
+		<script src="../../lib/vue.js"></script>
+		<script src="../../lib/vue-router.js"></script>
+		<script src="js/app.js"></script>
 	</body>
 </html>

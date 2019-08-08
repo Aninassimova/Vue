@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>业务数据</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <style>
+        .container{
+            overflow-x: auto;
+            margin-top:20px;
+            text-align: center;
+            display:-webkit-box;
+			-webkit-box-pack:center;
+        }
+        td{
+        	min-width: 100px;
+        }
+        /*.table-responsive {
+		    display:table
+		}*/
+        .pager{
+            float: left;
+        }
+        .btn{			
+		    border: 1px solid #ddd;
+		    border-radius: 0;
+		    text-decoration: none;
+		    position: relative;
+		    float: left;
+		    padding: 6px 12px;
+		    margin-left: -1px;
+		    line-height: 1.42857143;
+		    color: #337ab7;
+		    cursor: pointer
+		}
+		.pager span:hover{
+		    background-color: #eee;
+		}
+		.pager h6{
+		    margin-left: 28px;
+		    margin-right: 5px;
+		    margin-top: 5.5px;
+		}
+		span.btn.btn-default.active{
+		    color: #fff;
+		    cursor: default;
+		    background-color: #337ab7;
+		    border-color: #337ab7;
+		}
+		
+    </style>
+</head>
+
+<body>
+    <div class="container body-content">
+        <div id="app" class="form-group">
+			<!--表格-->
+            <table class="table table-bordered table-responsive table-striped">
+                <tr>
+                    <th>内网IP</th>
+                    <th>主机名称</th>
+                    <th>业务模块</th>
+                    <th>固资编号</th>
+                    <th>所属set</th>
+                    <th>大区中文名称</th>
+                    <th>维护人员</th>
+                    <th>备份维护人</th>
+                    <th>产品</th>
+                    <th>所在机房</th>                       
+                </tr>
+                <tr v-for="item in arrayData">
+                    <td class="text-center">{{item.IP}}</td>
+                    <td>{{item.HostName}}</td>
+                    <td>{{item.OpModule}}</td>
+                    <td>{{item.FixAssets}}</td>
+                    <td>{{item.Set}}</td>
+                    <td>{{item.ChineseName}}</td>
+                    <td>{{item.Maintainer}}</td>
+                    <td>{{item.Backup}}</td>
+                    <td>{{item.Product}}</td>
+                    <td>{{item.Room}}</td>
+                    <!--<td><a href="javascript:void(0)" v-on:click="deleteItem($index,item.HostName)">删除</a></td>-->
+                </tr>
+            </table>
+			<!--表格结束-->
+			
+			<!--分页栏-->
+            <div class="pager" id="pager">                   
+                <template v-for="item in pageCount+1">
+                    <span v-if="item==1" class="btn btn-default" v-on:click="showPage(1)" style="margin-right: 8px;">首页</span>
+                    <span v-if="item==1" class="btn btn-default" v-on:click="showPage(pageCurrent-1)"><</span>
+                    <span v-if="item==1" class="btn btn-default" v-on:click="showPage(item)">{{item}}</span>
+                    <span v-if="item==1&&item<showPagesStart-1" class="btn btn-default disabled">...</span>
+                    <span v-if="item>1&&item<=pageCount-1&&item>=showPagesStart&&item<=showPageEnd&&item<=pageCount" class="btn btn-default" v-on:click="showPage(item)">{{item}}</span>
+                    <span v-if="item==pageCount&&item>showPageEnd+1" class="btn btn-default disabled">...</span>
+                    <span v-if="item==pageCount" class="btn btn-default" v-on:click="showPage(item)">{{item}}</span>
+                    <span v-if="item==pageCount" class="btn btn-default" v-on:click="showPage(pageCurrent+1)">></span>
+                    <span v-if="item==pageCount" class="btn btn-default" v-on:click="showPage(pageCount)" style="margin-left: 8px;">尾页</span>
+                </template>
+                
+                <div class="form-inline" style="width: auto">
+                	<h6>Page</h6>
+                    <input class="pageIndex form-control" style="width:60px;text-align:center" type="text" v-model="pageCurrent" v-on:keyup.enter="showPage(pageCurrent,true)" />                  
+                    <h6 style="margin-left: 5px;">of  {{pageCount}}</h6>                                       
+                	<h6>每页</h6>
+                    <select class="form-control" v-model="pagesize" v-on:change="showPage(pageCurrent,true)" number>
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                        <option value="40">40</option>
+                    </select>
+                    <h6 style="margin-left: 5px;">条</h6>
+                </div>
+            </div>
+			<!--分页栏结束-->
+        </div>
+    </div>
+ 
+    <script src="js/jquery-2.1.4.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/vue.js"></script>
+    <script src="js/divide.js"></script>
+    
+</body>
+</html>

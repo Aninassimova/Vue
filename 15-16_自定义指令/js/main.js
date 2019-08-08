@@ -26,6 +26,7 @@ Vue.directive('pin',function(el,binding){ //元素，指令和信息
 		el.style.position='static';
 	}
 })
+
 //域
 new Vue({
 	el:"#app",

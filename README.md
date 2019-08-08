@@ -1,5 +1,5 @@
 # Vue
-- Vue的命令使用和集成，原教学视频见https://biaoyansu.com/
+Vue的命令使用和集成，原教学视频见https://biaoyansu.com/
 
 ## 第1-7课
 - v特殊指令
@@ -21,3 +21,6 @@
 
 ## 第18课
 - 插槽slots
+
+## 第19课
+- vue-route

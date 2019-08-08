@@ -6,23 +6,19 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 		<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
 		<title>index</title>
-		<style>
-			.active{
-				background: #a10;
-			}
-		</style>
 	</head>
 	
 	<body>
 		<div id="app">
-			<!--绑定数据和元素属性-->
-			<a v-bind:class="{active:isActive}" v-bind:href="url">	<!--v-bind可用:代替-->	
-			<!--app.url='http://taobao.com'在console上运行-->
-			<!--app.isActive=false在console上运行-->
-				点我
-				<!--<img v-bind:src='img' />-->
-			</a>
-			
+			<!--用于绑定事件-->
+			<button v-on="{mouseenter:onEnter,mouseleave:onOut}" @click="onClick">点我</button>
+			<!--<form v-on:submit="onSubmit($event)">-->
+			<!--<form v-on:submit.prevent="onSubmit"><!--函数中可以不要e.preventDefault();  prevent阻止事件默认行为-->			
+			<!--<form v-on:submit.stop="onSubmit">stop阻止单击事件冒泡-->
+			<form @keyup.enter="keyEnter" @submit.prevent="onSubmit">
+				<input type="text" />
+				<button type="submit">提交</button>
+			</form>
 		</div>	
 		<script src="../lib/vue.js"></script>
 		<script src="js/main.js"></script>
